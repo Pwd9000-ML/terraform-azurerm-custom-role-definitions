@@ -4,14 +4,20 @@
 
 ## Description
 
-Create one or many AZURE custom role definitions by using a list variable: `custom_role_definitions`
+Create one or many AZURE custom role definitions by using a list variable: `custom_role_definitions`.  
+The variable is a list of (ANY). See the variable object construct in below example.  
+
+**NOTE:** if no `scope` or `assignable_scopes` are defined then the current subscription ID will be used as the scope and assignable scopes.  
 
 Example:
 
 ```hcl
+data "azurerm_subscription" "primary" {}
+
 custom_role_definitions = [
   {
     role_definition_name = "CUSTOM - App Settings Reader"
+    scope                = data.azurerm_subscription.primary.id ## This setting is optional. (If not defined current subscription is used).
     description          = "Allows view access for Azure Sites Configuration"
     permissions = {
       actions          = ["Microsoft.Web/sites/config/list/action", "Microsoft.Web/sites/config/read"]
@@ -19,6 +25,7 @@ custom_role_definitions = [
       not_actions      = []
       not_data_actions = []
     }
+    assignable_scopes = [data.azurerm_subscription.primary.id] ## This setting is optional. (If not defined current subscription is used).
   },
   {
     role_definition_name = "CUSTOM - App Settings Admin"
