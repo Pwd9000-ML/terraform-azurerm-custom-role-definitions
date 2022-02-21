@@ -92,3 +92,5 @@ module "custom_roles" {
   custom_role_definitions = var.custom_role_definitions
 }
 ```
+
+![image.png](https://raw.githubusercontent.com/Pwd9000-ML/terraform-azurerm-custom-role-definitions/master/assets/rbac.png)
