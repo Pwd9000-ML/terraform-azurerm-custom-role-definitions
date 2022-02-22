@@ -39,10 +39,6 @@ custom_role_definitions = [
 ```
 
 See [examples](https://github.com/Pwd9000-ML/terraform-azurerm-custom-role-definitions/tree/master/examples/example_01) for more usage examples.  
-## Providers and terraform version requirements
-  
-- terraform version ~> 1.1.0
-- provider "azurerm" ~> 2.97.0
   
 ## Module Input variables
 

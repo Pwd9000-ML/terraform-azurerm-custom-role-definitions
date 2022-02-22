@@ -24,11 +24,6 @@ This example creates two custom role definitions, `CUSTOM - App Settings Reader`
     terraform apply destroy.tfplan
     ```
 
-## Providers and terraform version requirements
-  
-- terraform version ~> 1.1.0
-- provider "azurerm" ~> 2.97.0
-  
 ## module inputs
 
 - `deploy_custom_roles` - (Optional) Specifies whether custom RBAC roles should be created.
