@@ -40,16 +40,7 @@ custom_role_definitions = [
 
 See [examples](https://github.com/Pwd9000-ML/terraform-azurerm-custom-role-definitions/tree/master/examples/example_01) for more usage examples.  
   
-## Module Input variables
-
-- `custom_role_definitions` - (Required) Specifies a list of AZURE Custom Role Definitions of type ANY.
-
-## Module Outputs
-
-- `role_definition_ids` - List of Role Definition IDs.
-- `role_definition_resource_ids` -  List of Azure Resource Manager IDs for the resources..
-
-## Example 1
+## Example Usage
 
 This example creates two custom role definitions, `CUSTOM - App Settings Reader` and `CUSTOM - App Settings Admin` to specifically to manage AZURE app services and functions **App settings**.  
 
