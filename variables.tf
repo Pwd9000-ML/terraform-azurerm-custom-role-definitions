@@ -2,6 +2,17 @@
 # VARIABLES                                      #
 ##################################################
 variable "custom_role_definitions" {
-  type        = list(any)
-  description = "Required Input - Specifies a list of AZURE Custom Role Definitions of type ANY"
+  type = list(object({
+    role_definition_name = string
+    scope                = string
+    description          = string
+    permissions = object({
+      actions          = list(string)
+      data_actions     = list(string)
+      not_actions      = list(string)
+      not_data_actions = list(string)
+    })
+    assignable_scopes = list(string)
+  }))
+  description = "Specifies a list of custom role definitions"
 }

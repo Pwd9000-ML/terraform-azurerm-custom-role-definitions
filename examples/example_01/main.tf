@@ -1,6 +1,8 @@
-##################################################
-# PROVIDERS                                      #
-##################################################
+terraform {
+  #backend "azurerm" {}
+  backend "local" { path = "terraform-example.tfstate" }
+}
+
 provider "azurerm" {
   features {}
 }
@@ -9,7 +11,8 @@ provider "azurerm" {
 # MODULES                                        #
 ##################################################
 module "custom_roles" {
-  source                  = "github.com/Pwd9000-ML/terraform-azurerm-custom-role-definitions"
+  source                  = "Pwd9000-ML/custom-role-definitions/azurerm"
+  version                 = ">= 1.2.0"
   count                   = var.deploy_custom_roles == true ? 1 : 0
   custom_role_definitions = var.custom_role_definitions
 }
