@@ -14,6 +14,5 @@ variable "custom_role_definitions" {
     })
     assignable_scopes = optional(list(string))
   }))
-  default     = []
   description = "Specifies a list of custom role definitions"
 }
