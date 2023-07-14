@@ -4,7 +4,7 @@
 variable "custom_role_definitions" {
   type = list(object({
     role_definition_name = string
-    scope                = optional(string)
+    scope                = optional(string, data.azurerm_subscription.primary.id)
     description          = string
     permissions = object({
       actions          = list(string)
@@ -12,7 +12,7 @@ variable "custom_role_definitions" {
       not_actions      = list(string)
       not_data_actions = list(string)
     })
-    assignable_scopes = optional(list(string))
+    assignable_scopes = optional(list(string), [data.azurerm_subscription.primary.id])
   }))
   description = "Specifies a list of custom role definitions"
 }
