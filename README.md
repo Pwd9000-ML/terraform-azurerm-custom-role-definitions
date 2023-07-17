@@ -125,7 +125,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_custom_role_definitions"></a> [custom\_role\_definitions](#input\_custom\_role\_definitions) | Required Input - Specifies a list of AZURE Custom Role Definitions of type ANY | `list(any)` | n/a | yes |
+| <a name="input_custom_role_definitions"></a> [custom\_role\_definitions](#input\_custom\_role\_definitions) | Specifies a list of custom roles | `list(any)` | n/a | yes |
 
 ## Outputs
 
